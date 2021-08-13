@@ -16,7 +16,7 @@ p{
 
 .section-1::after {
     content: "";
-    background-image: url(/assets/img/bg.jpg);
+    background-image: url(/assets/image/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.5;
