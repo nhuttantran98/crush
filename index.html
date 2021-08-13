@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Crush ơi crush à</title>
+</head>
+
+<body>
+    <div class="section-1">
+        <div class="modal-flur">
+            <div class="modal-container">
+                <div class="modal-img">
+                    <img src="/assets/img/modal-cute-removebg-preview.png" alt="">
+                </div>
+                <div class="modal-content">
+                    <p class="modal-tile">Hellu bạn!!</p>
+                    <p class="modal-cotent__main">Mình thấy trò mèo này trên Facebook, nên mình bắt chước á</p>
+                    <p class="modal-content__sub">Chơi với mình nhe, 5 phút thuii</p>
+                </div>
+                <button class="modal-btn" onclick="toSection2()">Okeee</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-2">
+
+        <div class="section-2__title">
+            <div class="title__main">
+                <span>Cậu yêu tớ có phải không?? </span>
+                <div class="section-2__icon">
+                    <img src="/assets/img/icon.png" alt="">
+                </div>
+            </div>
+
+            <div class="title__sub">
+                Thoát ra là đồng ý à nha homie
+            </div>
+        </div>
+        <img src="/assets/img/anh-nen-doi.png" alt="" class="section-2__img">
+        <div class="section-2-btn-wrapper-love">
+            <button id="btn-love" class="section-2-btn-love" onclick="love()">Yêu ơi là yêu lun &#8826;33</button>
+        </div>
+        <div id="btn-hate" class="section-2-btn-wrapper-hate" onmouseover="changePosition()">
+            <button class="section-2-btn-hate">Chắc có cửa :)</button>
+        </div>
+    </div>
+
+    <div class="section-3">
+        <div class="section-2__title">
+            <div class="title__main">
+                <span>Cậu yêu tớ có phải không?? </span>
+                <div class="section-2__icon">
+                    <img src="/assets/img/icon.png" alt="">
+                </div>
+            </div>
+
+            <div class="title__sub">
+                Thoát ra là đồng ý à nha homie
+            </div>
+        </div>
+        <img src="/assets/img/anh-nen-doi.png" alt="" class="section-2__img">
+        <div class="love">
+            <p>Cho tớ biết vì sao cậu lại yêu tớ vậy??</p>
+            <div class="love__input">
+                <input id="love__message" type="text" placeholder="Viết lý do vô đây nè" value="">
+            </div>
+            <button class="love__confirm" onclick="finalAlert()">Gửi cho tớ</button>
+        </div>
+    </div>
+
+    <script>
+        var count = 0;
+        var countKeyPress = 0;
+        var message = "Vì cậu đẹp trai mà còn giỏi nữa á <3";
+        function toSection2() {
+            const section1 = document.getElementsByClassName('section-1')[0].style.display = "none";
+            const section2 = document.getElementsByClassName('section-2')[0].style.display = "flex";
+        }
+        function changePosition() {
+            count++;
+            if (count == 11) {
+                document.getElementById('btn-hate').style.top = '49%';
+                document.getElementById('btn-hate').style.left = '42%';
+            }
+            else if (count == 12) {
+                document.getElementById('btn-hate').style.display = 'none';
+            }
+            else {
+                var posx = ((Math.random() * (0.95 - 0.05) + 0.05).toFixed(2)) * innerWidth - 180;
+                var posy = ((Math.random() * (0.95 - 0.05) + 0.05).toFixed(2)) * innerHeight - 28.4;
+                const btn = document.getElementById('btn-hate').style.top = posy + 'px';
+                const btn2 = document.getElementById('btn-hate').style.left = posx + 'px';
+            }
+        }
+
+        function love() {
+            document.getElementsByClassName('section-2')[0].style.display = "none";
+            document.getElementsByClassName('section-3')[0].style.display = "flex";
+
+        }
+
+        function addContent() {
+            const input = document.getElementById('love__message');
+            input.addEventListener("keydown", function (event) {
+                if (countKeyPress <= 35) {
+                    event.preventDefault();
+                    input.value += message[countKeyPress];
+                    countKeyPress++;
+                } else {
+                    event.preventDefault();
+                    input.value += "3"
+                    countKeyPress++;
+                }
+
+            });
+
+        }
+
+        function removeCharacter() {
+
+        }
+
+        function finalAlert() {
+            Swal.fire({
+                html:
+                '<p style="font-family:Dancing Script, cursive;font-size:29px;color:white">Chú mèo đang chuyển tin nhắn tới tớ,</p> ' +
+                '<p style="font-size:18px; color:white; margin-top:7px">Cảm ơn vì đã hợp tác nha </p>',
+                imageUrl: "/assets/img/bg2.jpg",
+                imageWidth: 400,
+                // imageHeight: 200,
+                width: 600,
+                padding: '1.25em',
+                background: '#212151',
+                backdrop: `
+                    rgba(0,0,123,0.4)
+                    url("/assets/img/nyan-cat.gif")
+                    left top
+                    no-repeat
+                `
+            })
+        }
+
+        addContent();
+
+    </script>
+</body>
+
+</html>
