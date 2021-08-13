@@ -1,0 +1,259 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    margin: 0;
+}
+
+.section-1{
+    width: 100%;
+    height: 100vh;
+    position:relative;
+    display: block;
+}
+
+.section-1::after {
+    content: "";
+    background-image: url(/assets/image/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+.modal-flur{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.modal-container{
+    width: 300px;
+    height: 400px;
+    background-image: linear-gradient(180deg, #e088c4    , #5851c1  );
+    position:absolute;
+    left: 0; 
+    right: 0; 
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.modal-img{
+    width: 100%;
+    display: flex;
+}
+
+.modal-img img{
+    width: 65%;
+    margin-left: 43px;
+}
+
+.modal-content{
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-tile{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 12px;
+}
+
+.modal-cotent__main{
+    font-size: 12px;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.modal-content__sub{
+    margin: 20px 0px;
+}
+
+
+.modal-btn{
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 25px;
+    background-color: #11448fa8;
+    margin: auto;
+    cursor: pointer;
+
+}
+
+.modal-btn:hover{
+    opacity: 0.7;
+}
+
+
+.title__main{
+    display: flex;
+    height: 123px;
+}
+
+.title__main span{
+    font-size: 100px;
+    font-weight: 600;
+    font-family:  'Dancing Script', cursive;
+    letter-spacing: 2px;
+}
+
+.section-2{
+    background-color: #f49e9c;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+
+.section-2__title{
+    margin-top:25px;
+
+}
+
+
+.section-2__icon>img{
+    height: 80%;
+    margin: 0 25px;
+}
+
+.title__sub{
+    font-family:  'Dancing Script', cursive;
+    font-size: 30px;
+    text-align: center;
+}
+
+.section-2>img{
+    opacity: 0.4;
+}
+
+.section-2-btn-wrapper-love{
+    position: absolute;
+    top: 50%;
+}
+
+.section-2-btn-wrapper-hate{
+    position: absolute;
+    cursor: pointer;
+    top: 60%;
+    padding: 10px;
+}
+
+
+.section-2-btn-wrapper-love .section-2-btn-love {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    margin: auto;
+    background-color: #d61a71 !important;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.section-2-btn-love:hover{
+    opacity: 0.8;
+}
+
+
+.section-2-btn-wrapper-hate .section-2-btn-hate {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 25px;
+    margin: auto;
+    background-color: #301fb0 !important;
+}
+
+
+.section-3{
+    background-color: #f49e9c;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+
+.section-3 .love{
+    position: absolute;
+    top: calc(50% - 60px);
+    width: 48%;
+    height: 170px;
+    background-color:#212151;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.section-3 .love p{
+    color: white;
+    font-family:  'Dancing Script', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.love__input{
+    font-size: 16px;
+    padding: 5px 12px;
+    text-decoration: none;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.love__input input{
+    outline: none;
+    border: none;
+    width: 80%;
+    font-size: 16px;
+    height: 25px;
+    padding: 4px 10px;
+}
+
+.love__confirm{
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 15px auto;
+    background-color: #d61a71 !important;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.section-4{
+    background-color: #f49e9c;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+}
+
+#swal2-title{
+    font-size: 22px;
+}
